@@ -1,8 +1,8 @@
 //Business Logic
 
-function Pizza(topping, size) {
+function Pizza(topping, size, price) {
   this.topping = topping;
   this.size = size;
-  this.price = 0;
+  this.price = price;
 } 
 
