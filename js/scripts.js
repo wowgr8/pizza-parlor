@@ -3,5 +3,6 @@
 function Pizza(topping, size) {
   this.topping = topping;
   this.size = size;
-  this.price = price;
+  this.price = 0;
 }
+
