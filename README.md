@@ -13,3 +13,7 @@ Test: "It should return price of 10 if it's a small pizza"
 Code: smallPepperoniPizza.price()
 Expected Output: 10
 
+Test: "It should add 1 to the price if Black Olives and Red Onions are added"
+Code: smallPepperoniPizza = ["BlackOlives", "Red Onions"];
+smallPepperoniPizza.totalPrice();
+ExpectedOutput: 12

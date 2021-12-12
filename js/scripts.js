@@ -17,6 +17,20 @@ Pizza.prototype.totalPrice = function() {
     this.price += 10;
   }
 
+  this.topping.forEach(addToppingPrice); 
+  function addToppingPrice(topping) {
+    if (topping === "Pepperoni") {
+      this.price += 2;
+    }
+    if (topping === "Black Olives") {
+      this.price += 1;
+    }
+    if (topping === "Red Onion") {
+      this.price += 1;
+    }
+
+  }
+  return this.price
 }
 
 let i = 0
@@ -26,8 +40,17 @@ $(document).ready(function() {
   $("#master-form").submit(function(event) {
     event.preventDefault();
     const selectedSize = $(".sizeOption:checked").val();
-
-    let pizzaOrder = new Pizza(selectedSize);
+    const selectedIngredients = function() {
+      let ingredientArray = [];
+      $(".toppingClass:checked").each(function(){
+        ingredientArray[i++] = $(this).val();
+      }) 
+      return ingredientArray
+    }
+    const selectedIngredientArray = selectedIngredients();
+    // console.log(selectedIngredientArray)
+    // console.log($(".toppingClass:checked"))
+    let pizzaOrder = new Pizza(selectedSize, selectedIngredientArray);
     // console.log(pizzaOrder);
     pizzaOrder.totalPrice();
     $("#total").text(pizzaOrder.price)
