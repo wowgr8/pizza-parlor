@@ -8,15 +8,14 @@ function Pizza(size, topping ) {
 
 Pizza.prototype.totalPrice = function() {
   if (this.size === "Large"){
-    this.price = 15;
+    this.price += 15;
   }
   else if (this.size === "Medium"){
-    this.price = 12;
+    this.price += 12;
   }
   else if (this.size === "Small"){
-    this.price = 10;
+    this.price += 10;
   }
-
 
 }
 
@@ -28,5 +27,10 @@ $(document).ready(function() {
     event.preventDefault();
     const selectedSize = $(".sizeOption:checked").val();
 
+    let pizzaOrder = new Pizza(selectedSize);
+    // console.log(pizzaOrder);
+    pizzaOrder.totalPrice();
+    $("#total").text(pizzaOrder.price)
+    $("#hiddenPrice").show();  
   })
 })
