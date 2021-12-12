@@ -17,8 +17,8 @@ Pizza.prototype.totalPrice = function() {
     this.price += 10;
   }
 
-  this.topping.forEach(addToppingPrice); 
-  function addToppingPrice(topping) {
+  this.topping.forEach(addToppingtoPrice); 
+  function addToppingtoPrice(topping) {
     if (topping === "Pepperoni") {
       this.price += 2;
     }
@@ -28,9 +28,7 @@ Pizza.prototype.totalPrice = function() {
     if (topping === "Red Onion") {
       this.price += 1;
     }
-
   }
-  return this.price
 }
 
 let i = 0
@@ -48,10 +46,7 @@ $(document).ready(function() {
       return ingredientArray
     }
     const selectedIngredientArray = selectedIngredients();
-    // console.log(selectedIngredientArray)
-    // console.log($(".toppingClass:checked"))
     let pizzaOrder = new Pizza(selectedSize, selectedIngredientArray);
-    // console.log(pizzaOrder);
     pizzaOrder.totalPrice();
     $("#total").text(pizzaOrder.price)
     $("#hiddenPrice").show();  
