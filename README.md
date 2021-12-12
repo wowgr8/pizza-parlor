@@ -28,7 +28,7 @@ This website will return the total price of a pizze depending on the size and to
 ```
   open index.html
 ```
-## Known Bugs##
+## Known Bugs ##
 
 * None
 
