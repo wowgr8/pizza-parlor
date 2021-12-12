@@ -13,26 +13,30 @@
       <h1>Pizza Parlor</h1>
       <p>Choose your pizza size and topping below!</p>
     </div>
-    <p>Choose your size:</p>
-    <form>
-      <input type="radio" id="smallSizeOption" name="sizeOption" value="Small">
-      <label for="small">Small</label><br>
-      <input type="radio" id="mediumSizeOption" name="sizeOption" value="Medium">
-      <label for="medium">Medium</label><br>
-      <input type="radio" id="largeSizeOption" name="sizeOption" value="Large">
-      <label for="large">Large</label>
-    </form><br>
-    <p>Choose your topping</p>
-    <form>
-      <input type="checkbox" id="topping1" name="topping1" value="1">
-      <label for="topping1">Pepperoni</label><br>
-      <input type="checkbox" id="topping2" name="topping2" value="2">
-      <label for="topping2">Black Olives</label><br>
-      <input type="checkbox" id="topping3" name="topping3" value="3">
-      <label for="topping3">Red Onion</label><br>
-      <button type="submit" class="btn-success text-warning">Place Order!</button>
-    </form><br>
+    <form id="master-form">
+      <div class="size-form">
+        <h5>Choose your size:</h5>
+        <input type="radio" id="smallSizeOption" class="sizeOption" name="sizeOption" value="Small">
+        <label for="small">Small</label><br>
+        <input type="radio" id="mediumSizeOption" class="sizeOption" name="sizeOption" value="Medium">
+        <label for="medium">Medium</label><br>
+        <input type="radio" id="largeSizeOption" class="sizeOption" name="sizeOption" value="Large">
+        <label for="large">Large</label>
+        </div><br>      
+      <div class="topping-form">
+        <h5>Choose your topping</h5>
+        <input type="checkbox" id="topping1" class="toppingClass" name="topping1" value="Pepperoni">
+        <label for="topping1">Pepperoni</label><br>
+        <input type="checkbox" id="topping2" class="toppingClass" name="topping2" value="Black Olives">
+        <label for="topping2">Black Olives</label><br>
+        <input type="checkbox" id="topping3" class="toppingClass" name="topping3" value="Red Onion">
+        <label for="topping3">Red Onion</label><br>
+        
+        <button type="submit" class="btn btn-success text-warning">Place Order!</button>
+      </div><br>    
+    </form>
     <div id="hiddenPrice">
+      <p>Your total is: $<span id="total"></span>.</p>
     </div>
   </div>
 </body>
