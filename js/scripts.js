@@ -17,3 +17,16 @@ Pizza.prototype.totalPrice = function() {
     this.price = 10;
   }
 
+
+}
+
+let i = 0
+
+
+$(document).ready(function() {
+  $("#master-form").submit(function(event) {
+    event.preventDefault();
+    const selectedSize = $(".sizeOption:checked").val();
+
+  })
+})
