@@ -17,6 +17,7 @@ Pizza.prototype.totalPrice = function() {
     this.price += 10;
   }
 
+  
   this.topping.forEach(addToppingtoPrice); 
   function addToppingtoPrice(topping) {
     if (topping === "Pepperoni") {
@@ -29,10 +30,12 @@ Pizza.prototype.totalPrice = function() {
       this.price += 1;
     }
   }
+  return this.price
 }
 
 let i = 0
 
+// UI Logic
 
 $(document).ready(function() {
   $("#master-form").submit(function(event) {
@@ -40,12 +43,13 @@ $(document).ready(function() {
     const selectedSize = $(".sizeOption:checked").val();
     const selectedIngredients = function() {
       let ingredientArray = [];
-      $(".toppingClass:checked").each(function(){
+      $("input:checkbox[name=toppings]:checked").each(function(){
         ingredientArray[i++] = $(this).val();
       }) 
       return ingredientArray
     }
     const selectedIngredientArray = selectedIngredients();
+    console.log($("input:checkbox[name=toppings]:checked"))
     let pizzaOrder = new Pizza(selectedSize, selectedIngredientArray);
     pizzaOrder.totalPrice();
     $("#total").text(pizzaOrder.price)
