@@ -1,3 +1,17 @@
 #hiddenPrice {
   display: none;
 }
+
+body{
+  background-image: url(/Users/cesar/epicodus/independent-projects/pizza-parlor/img/pizzas-on-dark-taple-top-background--with-copyspace.jpeg);
+  background-repeat: no-repeat;
+  background-size: 1500px 1000px;
+}
+
+.jumbotron {
+  opacity: 0.5; 
+}
+
+#hiddenPrice p {
+  color: gold !important;
+}
