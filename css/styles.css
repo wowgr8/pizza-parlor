@@ -3,7 +3,7 @@
 }
 
 body{
-  background-image: url(/Users/cesar/epicodus/independent-projects/pizza-parlor/img/pizzas-on-dark-taple-top-background--with-copyspace.jpeg);
+  background-image: url(../img/pizzas-on-dark-taple-top-background--with-copyspace.jpeg);
   background-repeat: no-repeat;
   background-size: 1500px 1000px;
 }
