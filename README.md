@@ -4,6 +4,8 @@ _By Cesar Lopez_
 ## Description ##
 This website will return the total price of a pizze depending on the size and topping you select.
 
+![](img/pizza-parlor-demo.png)
+
 ## Technologies Used ##
 
 * JavaScript
