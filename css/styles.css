@@ -2,10 +2,14 @@
   display: none;
 }
 
-body{
+body {
   background-image: url("../img/pizzas-on-dark-taple-top-background--with-copyspace.jpeg");
   background-repeat: no-repeat;
-  background-size: 1500px 1000px;
+  background-size: 100%;
+}
+
+form {
+  color: white;
 }
 
 .jumbotron {
