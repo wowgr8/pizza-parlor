@@ -1,7 +1,8 @@
-//Business Logic
+// Business Logic
 
-function Pizza(size, topping ) {
-  this.topping = topping;
+// Object constructor for a pizza order
+function Pizza(size, toppings) {
+  this.toppings = toppings;
   this.size = size;
   this.price = 0;
 } 
@@ -17,41 +18,49 @@ Pizza.prototype.totalPrice = function() {
     this.price += 10;
   }
 
-  
-  this.topping.forEach(addToppingtoPrice); 
-  function addToppingtoPrice(topping) {
-    if (topping === "Pepperoni") {
-      this.price += 2;
+  let toppingPrice = 0
+  this.toppings.forEach(function(toppings){
+    if (toppings === "Pepperoni") {
+      toppingPrice += 2;
     }
-    if (topping === "Black Olives") {
-      this.price += 1;
+    if (toppings === "Black Olives") {
+      toppingPrice += 1;
     }
-    if (topping === "Red Onion") {
-      this.price += 1;
+    if (toppings === "Red Onion") {
+      toppingPrice += 1;
     }
-  }
+  })
+  this.price += toppingPrice
+
   return this.price
 }
-
-let i = 0
 
 // UI Logic
 
 $(document).ready(function() {
   $("#master-form").submit(function(event) {
     event.preventDefault();
+    // Get pizza size
     const selectedSize = $(".sizeOption:checked").val();
+    
+    // Get list of pizza toppings
     const selectedIngredients = function() {
       let ingredientArray = [];
       $("input:checkbox[name=toppings]:checked").each(function(){
-        ingredientArray[i++] = $(this).val();
+        ingredientArray.push(this.value);
       }) 
       return ingredientArray
     }
     const selectedIngredientArray = selectedIngredients();
-    console.log($("input:checkbox[name=toppings]:checked"))
-    let pizzaOrder = new Pizza(selectedSize, selectedIngredientArray);
+    selectedIngredientArray
+    
+    // Create a pizza order object
+    const pizzaOrder = new Pizza(selectedSize, selectedIngredientArray);
+    
+    // Calculate the pizza price
     pizzaOrder.totalPrice();
+
+    // Display the pizza price
     $("#total").text(pizzaOrder.price)
     $("#hiddenPrice").show();  
   })
